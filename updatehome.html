@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html>
+<body 
+
+<br>
+
+
+<head>
+<title>UPDATE INFORMATION PAGE</title>
+<style>
+*{
+	margin:0px;
+	padding:0px;
+	}
+body{
+	font-family:Tahoma, Geneva, sans-serif;
+
+background-color: #ffffcc;
+	}
+#container{
+	width:550px;
+	background-color:rgba(250,250,252,.9);
+	margin:auto;
+	margin-top:10px;
+	margin-bottom:10px;
+	box-shadow:0 0 3px #999;
+                   opacity: 0.8;
+	}
+#container_body{
+	padding:20px;
+	}
+.form_title{
+	font-size:35px;
+	color:#141823;
+	text-align:center;
+	padding:10px;
+	font-weight:normal;
+	}
+.head_para{
+	font-size:19px;
+	color:#99a2a7;
+	text-align:center;
+	font-weight:normal;
+	}
+#form_name{
+	padding:25px 0 0 15px;
+	}
+.firstnameorlastname{
+	 margin-right:20px;
+	}
+.input_name{
+	width:207px;
+	padding:5px;
+	font-size:18px;
+	}
+	
+
+#sign_user{
+	font-size:14px;
+	color:#FFF;
+	text-align:center;
+	background-color:#3B5998;
+	width:475px;
+	padding:10px;
+	margin-top:10px;
+	cursor: pointer;
+	}
+#errorBox{
+	color:#F00;
+	}
+
+
+
+</style>
+<script>
+function Submit(){
+	var name = document.form.name.value,
+		age = document.form.age.value;
+		dob = document.form.dob.value,
+		fname = document.form.fname.value;
+		mname = document.form.mname.value,
+		gender = document.form.gender.value;
+		nationality = document.form.nationality.value,
+		
+		
+	if( name == "" )
+   {
+     document.form.name.focus() ;
+	 document.getElementById("errorBox").innerHTML = "enter your name";
+     return false;
+   }
+
+   
+   if( age == "" )
+   {
+     document.form.age.focus() ;
+	 document.getElementById("errorBox").innerHTML = "enter your age";
+     return false;
+   }
+
+   
+   if( dob == "" )
+   {
+     document.form.dob.focus() ;
+	 document.getElementById("errorBox").innerHTML = "enter your date of birth";
+     return false;
+   }
+
+   
+   if( fname == "" )
+   {
+     document.form.fname.focus() ;
+	 document.getElementById("errorBox").innerHTML = "enter the father's name";
+     return false;
+   }
+
+   
+   if( mname == "" )
+   {
+     document.form.mname.focus() ;
+	 document.getElementById("errorBox").innerHTML = "enter the mother's name";
+     return false;
+   }
+
+   
+   if( gender == "" )
+   {
+     document.form.gender.focus() ;
+	 document.getElementById("errorBox").innerHTML = "enter your gender";
+     return false;
+   }
+
+   
+   
+	if( nationality == "" )
+   {
+     document.form.nationality.focus() ;
+	 document.getElementById("errorBox").innerHTML = "enter your natinality";
+     return false;
+   }
+
+	
+	} 
+
+</script>
+</head>
+
+<body>
+<div id="emptyDiv">
+
+
+</div>
+<div id="description"></div>
+<!--container start-->
+<div id="container">
+  <div id="container_body">
+    <div>
+      <h2 class="form_title">UPDATE INFORMATION FORM</h2>
+      
+<font size="5" color="#3380FF">PLEASE FILL IN THE UPDATED VALUES:</font>
+    </div>
+    <!--Form  start-->
+    <div id="form_name">
+      <div class="firstnameorlastname">
+       <form name="form" action="updatehome.php" method="POST">
+       <div id="errorBox"></div>
+        <input type="text" name="name" value="" placeholder="Name"  class="input_name" >
+        <input type="number" name="age" value="" placeholder="Age" class="input_name" >
+		<input type="text" name="dob" value="" placeholder="Date of Birth"  class="input_name" >
+        <input type="text" name="fname" value="" placeholder="Father's Name" class="input_name" >
+		<input type="text" name="mname" value="" placeholder="Mother's Name"  class="input_name" >
+        <input type="text" name="gender" value="" placeholder="Gender" class="input_name" >
+		<input type="text" name="nationality" value="" placeholder="Nationality"  class="input_name" >
+      
+       <div>
+	   <button id="sign_user" type="submit" onClick="Submit()">UPDATE INFO</button>
+      </div>
+     </form>
+    </div>
+    <!--form ends--> 
+  </div>
+</div>
+<!--container ends-->
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+<body 
+
+<br>
+
+
+<head>
+<title>UPDATE INFORMATION PAGE</title>
+<style>
+*{
+	margin:0px;
+	padding:0px;
+	}
+body{
+	font-family:Tahoma, Geneva, sans-serif;
+
+background-color: #ffffcc;
+	}
+#container{
+	width:550px;
+	background-color:rgba(250,250,252,.9);
+	margin:auto;
+	margin-top:10px;
+	margin-bottom:10px;
+	box-shadow:0 0 3px #999;
+                   opacity: 0.8;
+	}
+#container_body{
+	padding:20px;
+	}
+.form_title{
+	font-size:35px;
+	color:#141823;
+	text-align:center;
+	padding:10px;
+	font-weight:normal;
+	}
+.head_para{
+	font-size:19px;
+	color:#99a2a7;
+	text-align:center;
+	font-weight:normal;
+	}
+#form_name{
+	padding:25px 0 0 15px;
+	}
+.firstnameorlastname{
+	 margin-right:20px;
+	}
+.input_name{
+	width:207px;
+	padding:5px;
+	font-size:18px;
+	}
+	
+
+#sign_user{
+	font-size:14px;
+	color:#FFF;
+	text-align:center;
+	background-color:#3B5998;
+	width:475px;
+	padding:10px;
+	margin-top:10px;
+	cursor: pointer;
+	}
+#errorBox{
+	color:#F00;
+	}
+
+
+
+</style>
+<script>
+function Submit(){
+	var mobile = document.mobile.ssc.value,
+		residence = document.residence.hsc.value;
+		aoc = document.form.aoc.value,
+		email = document.form.email.value;
+
+		
+		
+	if( mobile == "" )
+   {
+     document.form.mobile.focus() ;
+	 document.getElementById("errorBox").innerHTML = "enter your mobile number";
+     return false;
+   }
+
+   
+   if( residence == "" )
+   {
+     document.form.residence.focus() ;
+	 document.getElementById("errorBox").innerHTML = "enter your residence address";
+     return false;
+   }
+
+   
+   if( aoc == "" )
+   {
+     document.form.aoc.focus() ;
+	 document.getElementById("errorBox").innerHTML = "enter your address of communication";
+     return false;
+   }
+
+   
+   if( email == "" )
+   {
+     document.form.email.focus() ;
+	 document.getElementById("errorBox").innerHTML = "enter your email id";
+     return false;
+   }
+
+   
+   
+	
+	} 
+
+</script>
+</head>
+
+<body>
+<div id="emptyDiv">
+
+
+</div>
+<div id="description"></div>
+<!--container start-->
+<div id="container">
+  <div id="container_body">
+    <div>
+      <h2 class="form_title">UPDATE INFORMATION FORM</h2>
+      
+<font size="5" color="#3380FF">PLEASE FILL IN THE UPDATED VALUES:</font>
+    </div>
+    <!--Form  start-->
+    <div id="form_name">
+      <div class="firstnameorlastname">
+       <form name="form" action="updatecontact.php" method="POST">
+       <div id="errorBox"></div>
+        <input type="text" name="mobile" value="" placeholder="Mobile number"  class="input_name" >
+        <input type="text" name="residence" value="" placeholder="Residence Address" class="input_name" >
+		<input type="text" name="aoc" value="" placeholder="Address of Communication"  class="input_name" >
+        <input type="text" name="email" value="" placeholder="Email ID" class="input_name" >
+		
+      
+       <div>
+	   <button id="sign_user" type="submit" onClick="Submit()">UPDATE INFO</button>
+      </div>
+     </form>
+    </div>
+    <!--form ends--> 
+  </div>
+</div>
+<!--container ends-->
+</body>
+</html>
